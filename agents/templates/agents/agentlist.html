@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html> -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!-- <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Leads List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+        .lead {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-top: 10px;
+            background-color: #f6f6f6;
+            width: 100%;
+        }
+        </style>
+    </head>
+    <body> -->
+        {% extends "base.html" %}
+        {% block content %}
+          
+        
+                <a href="{% url 'agentcreate' %}">Create Agent</a>
+                <hr/>
+               <h1>List of leads</h1>
+                {% for agents in object_list %}
+                    <div class="agent">
+                    <ul>
+                    <a href="{% url 'agent_detail' agents.pk %}">{{ agents }}</a>
+                    </ul>
+                    </div>
+                {% endfor %}
+                
+                <script src="" async defer></script>
+        
+        {% endblock content %}

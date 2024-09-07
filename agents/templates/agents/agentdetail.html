@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html> -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!-- <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Leads Detail</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+        .lead {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-top: 10px;
+            background-color: #f6f6f6;
+            width: 100%;
+        }
+        </style>
+    </head>
+    <body> -->
+
+        {% extends "base.html" %}
+
+        {% block content %}
+          
+        <div>
+            <a href="{% url 'agentlist'  %}">Back to Agent List</a>
+            <hr/>
+           <h1>Detail of {{ agent.username }}</h1>
+            <!-- <p>This persons age is: {{ lead.age }}</p>
+            <p>This agent assigned for this Lead is: {{ lead.agent }}</p>
+     -->
+            <div>
+                <a href="{% url 'edit_agent' agent.id %}">Edit Lead</a>
+                <a href="{% url 'delete_agent' agent.id %}">Delete Lead</a>
+            </div>
+            <script src="" async defer></script>
+        </div>
+    
+        {% endblock content %}
+    
