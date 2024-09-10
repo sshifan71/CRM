@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+#https://devcenter.heroku.com/articles/heroku-cli#verify-your-installation
+#https://devcenter.heroku.com/categories/deployment
+#https://github.com/heroku/python-getting-started/blob/main/gettingstarted/settings.py
+
+
 
 from pathlib import Path
 import os
