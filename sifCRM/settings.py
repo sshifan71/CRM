@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'sifCRM.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "sifcrmDB",
-        'USER': "sifcrmuser" ,
-        'PASSWORD': "sifcrm1234",
-        'HOST': "localhost",
-        'PORT': 5432,
+        'NAME': os.getenv('DB_NAME', 'sifcrmDB'),
+        'USER': os.getenv('DB_USER', 'sifcrmuser'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'sifcrm1234'),
+        'HOST': os.getenv('DB_HOST', 'crm-k0yh.onrender.com'),  # Use environment variable for production
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
