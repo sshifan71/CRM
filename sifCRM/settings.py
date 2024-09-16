@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-mme47i*xst002g(3b2py!$l(7^3)9bv)y%n#y$5p^x#d5c0br@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower()=="true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost 127.0.0.1").split(" ")
 
 PORT = os.getenv('PORT', '8000') 
 
@@ -89,8 +89,12 @@ WSGI_APPLICATION = 'sifCRM.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "sifcrmDB",
+        'USER': "sifcrmuser" ,
+        'PASSWORD': "sifcrm1234",
+        'HOST': "localhost",
+        'PORT': 5432,
     }
 }
 
